@@ -1,1 +1,95 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Work+Sans&display=swap');
+
+:root {
+    /* Colours */
+    --background: #F3F3F3;
+    --onbackground: #252525;
+    --primary: #005461;
+    --primary-hover: #79A6AF;
+    --outline: #333333;
+    --grey-default: #CECECE;
+    --grey-darker: #6C6C6C;
+    --secondary: #E6DACE;
+    /* Soft Grid Base Unit*/
+    --sg-unit: 8px;
+    --sg_sm: calc(var(--sg-unit) * 0.5);
+    --sg: var(--sg-unit);
+    --sg_lg: calc(var(--sg-unit) * 2);
+    --sg_xlg: calc(var(--sg-unit) * 4);
+    --header-height: 80px;
+    /* Border radius */
+    --border-radius: 2px;
+    /* Transition */
+    --transition: 250ms;
+}
+
+body {
+    margin: 0px;
+    box-sizing: border-box;
+    line-height: normal;
+    font-size: 15px;
+    font-family: "Inter", sans-serif;
+    letter-spacing: 0.00937rem;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 45px;
+    font-weight: 400;
+    line-height: 1.15556;
+}
+
+h2 {
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.2222;
+}
+
+h3 {
+    font-size: 28px;
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary);
+}
+
+p {
+    margin: 0 0 var(--sg) 0;
+}
+
+hr {
+    margin: var(--sg_lg) 0;
+}
+
+app-root {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+main {
+    background-color: var(--background);
+    color: var(--onbackground);
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    height: inherit;
+    width: 100%;
+}
+
+article {
+    overflow: auto;
+    width: 100%;
+}
+
+.page-container {
+    padding: var(--sg_xlg);
+}
+
+.material-symbols-outlined {
+    font-size: 20px;
+}

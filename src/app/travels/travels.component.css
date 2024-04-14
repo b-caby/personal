@@ -1,0 +1,159 @@
+.trips__page {
+  width: 100%;
+  height: 100%;
+}
+
+.trips__container {
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  bottom: 0;
+  width: 360px;
+  z-index: 999;
+  overflow: auto;
+  background: var(--background);
+  padding: var(--sg);
+  box-sizing: border-box;
+}
+
+.trips__itemlist {
+  display: flex;
+  gap: var(--sg);
+  flex-direction: column;
+
+}
+
+.trips__item {
+  min-height: 216px;
+}
+
+.trip__container {
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  max-width: 1000px;
+  min-width: 600px;
+  z-index: 999;
+  overflow: auto;
+  background: var(--background);
+}
+
+.trip__close {
+  background-color: var(--primary);
+  color: white;
+}
+
+.trip__steplist {
+  display: flex;
+  padding: var(--sg);
+  gap: var(--sg);
+  flex-direction: column;
+}
+
+.trip__picture {
+  width: 100%;
+}
+
+.map__container {
+  position: absolute;
+  right: 0;
+  display: flex;
+  width: 100%;
+  height: calc(100vh - var(--header-height));
+}
+
+.map__spacer {
+  width: 360px;
+  flex-shrink: 0;
+}
+
+.map__spacer.is-trip-view {
+  width: 50%;
+  max-width: 1000px;
+  min-width: 600px;
+  flex-shrink: 0;
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+}
+
+/* For browsers that support `scrollbar-*` properties */
+@supports (scrollbar-color: auto) {
+  .trips-container {
+    scrollbar-color: grey transparent;
+  }
+}
+
+@media (max-width: 720px) {
+  .trips__page {
+    display: flex;
+    flex-direction: column-reverse;
+
+  }
+
+  .trips__container {
+    top: auto;
+    width: 100%;
+    height: 220px;
+  }
+  
+  .trips__itemlist {
+    flex-direction: row;
+    height: 100%;
+  }
+  
+  .trips__item {
+    min-width: 260px;
+    min-height: auto;
+  }
+
+  .trips_phantomitem {
+    min-width: 0.5px;
+  }
+  
+  .trip__container {
+    position: fixed;
+    top: auto;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+    overflow: auto;
+    background: var(--background);
+    width: 100%;
+    height: 70vh;
+  }
+  
+  .trip__close {
+    background-color: var(--primary);
+    color: white;
+  }
+  
+  .trip__steplist {
+    display: flex;
+    padding: var(--sg);
+    gap: var(--sg);
+    flex-direction: column;
+  }
+  
+  .trip__picture {
+    width: 100%;
+  }
+  
+  .map__container {
+    flex-direction: column-reverse;
+  }
+  
+  .map__spacer {
+    width: 100%;
+    height: 220px;
+  }
+  
+  .map__spacer.is-trip-view {
+    width: 100%;
+    height: 70vh;
+  }
+}

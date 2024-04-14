@@ -1,0 +1,39 @@
+<div class="trips__page">
+    @if (!currentTrip) {
+        <!-- Display the list of trips  -->
+        <div class="trips__container">
+            <div class="trips__itemlist">
+                @for (trip of trips; track trip) {
+                    <div class="trips__item" style="background-image: url({{trip.background}});" (click)="OpenTrip(trip)">
+                        <span>{{trip.title}} {{parseTripDuration(trip.startDate, trip.endDate)}} {{trip.steps.length}}</span>
+                    </div>
+                }
+                <div class="trips_phantomitem"></div>
+            </div>
+        </div>
+    }
+    @else {
+        <!-- Display the individual trip -->
+        <div class="trip__container">
+            <div class="trip__close" (click)="CloseTrip()">Close</div>
+            <div class="trip__steplist">
+                @for (step of currentTrip.steps; track step) {
+                    <div class="trip__item">
+                        <div>{{step.title}}</div>
+                        <div>{{step.description}}</div>
+                        <div>
+                            @for (picture of step.pictures; track picture){
+                                <img class="trip__picture" src="{{picture}}">
+                            }
+                        </div> 
+                    </div>
+                }
+            </div>
+        </div>
+    }
+
+    <div class="map__container">
+        <div class="map__spacer" [class.is-trip-view]=!!currentTrip></div>
+        <div class="map" #map></div>
+    </div>
+</div>

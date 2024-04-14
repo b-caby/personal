@@ -1,0 +1,44 @@
+.year-container {
+    font-weight: 600;
+    border-bottom: 1px solid black;
+    padding-bottom: var(--sg);
+    font-size: 18px;
+}
+
+.article-container {
+    padding: var(--sg_lg) 0px;
+}
+
+.link-container {
+    display: flex;
+    grid-gap: var(--sg_lg);
+}
+
+.symbol {
+    height: var(--sg);
+    width: var(--sg);
+    background-color: var(--primary);
+    flex-shrink: 0;
+    margin-top: 9px;
+}
+
+.title {
+    color: var(--primary);
+    font-size: 18px;
+    font-family: Poppins, sans-serif;
+}
+
+.subtext {
+    margin-left: 24px;
+    display: flex;
+    align-items: center;
+    gap: var(--sg);
+}
+
+.transparent {
+    opacity: 0.8;
+}
+
+.description {
+    padding: var(--sg) 0px;
+}
