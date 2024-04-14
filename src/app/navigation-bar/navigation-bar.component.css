@@ -160,7 +160,7 @@
     }
 
         .navigation-bar.toggled .navbar {
-            height: calc(100vh - var(--header-height));
+            height: calc(100svh - var(--header-height));
             flex-direction: column;
         }
 
