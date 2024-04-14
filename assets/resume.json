@@ -1,0 +1,77 @@
+[
+  {
+    "jobTitle": ".NET front-end developer / Design System Lead",
+    "company": "Malvern Panalytical",
+    "location": "Bristol, United Kingdom",
+    "startDate": "04/2022",
+    "endDate": "",
+    "description": "Development of a Blazor WASM web application for real-time crop analysis with ​AI-enabled cartography. Design System Lead and main developer. Creation of wireframes, prototypes and workflows and front-end integration of the application.",
+    "skills": [
+      "Blazor",
+      ".NET Core",
+      "Azure DevOps",
+      "Design System",
+      "Figma",
+      "Microsoft Azure",
+      "Azure Cosmos DB",
+      "Kubernetes"
+    ]
+  },
+  {
+    "jobTitle": ".NET / Blazor web developer",
+    "company": "Malvern Panalytical",
+    "location": "Bristol, United Kingdom",
+    "startDate": "11/2020",
+    "endDate": "04/2022",
+    "description": ".NET full-stack web developer for an application for managing connected scientific equipment on an Azure platform. Design and integration of the front-end. Development of APIs and data management/storage via Azure Cosmos DB.",
+    "skills": [
+      "Blazor",
+      ".NET Core",
+      "Azure DevOps",
+      "Microsoft Azure",
+      "Azure Cosmos DB",
+      "SpecFlow",
+      "Selenium"
+    ]
+  },
+  {
+    "jobTitle": ".NET software developer",
+    "company": "Malvern Panalytical",
+    "location": "Overijssel, The Netherlands",
+    "startDate": "02/2018",
+    "endDate": "11/2020",
+    "description": "WPF software developer for scientific measurement instruments in a Agile Scrum team: design and integration of the user interface, implementation of scientific algorithms, development of unit tests and automatic regression tests.",
+    "skills": [
+      "ASP.NET",
+      "C#",
+      "WPF",
+      "Visual Basic .NET",
+      "Azure DevOps",
+      "Selenium"
+    ]
+  },
+  {
+    "jobTitle": ".NET/Javascript web Developer",
+    "company": "Sopra Steria",
+    "location": "Lille, France",
+    "startDate": "11/2016",
+    "endDate": "12/2017",
+    "description": "Development of a .NET application communicating with Node JS micro-services for the booking of train tickets for a French railway company in a Agile Scrum team. Responsible for the implementation of the automated integration tests. CMS customer support.",
+    "skills": [
+      "ASP.NET",
+      "C#",
+      "Node.js",
+      "GitLab",
+      "Selenium"
+    ]
+  },
+  {
+    "jobTitle": "PhD candidate",
+    "company":"CEA",
+    "location": "Grenoble, France",
+    "startDate": "10/2012",
+    "endDate": "12/2015",
+    "description": "Development of combined X-ray characterization technique and software (Python), optimization of measurement and analysis protocols, characterization of components of technological interest (RAM, PV, MOS). Created of a collaboration group with European laboratories. Performed installation of experimental setup, conformity tests, operational support and results analysis.",
+    "skills": []
+  }
+]
