@@ -1,6 +1,6 @@
 .trips__page {
-  width: 100%;
-  height: 100%;
+  width: 100svw;
+  height: calc(100svh - 80px);
 }
 
 .trips__container {
