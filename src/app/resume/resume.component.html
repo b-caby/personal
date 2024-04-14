@@ -1,29 +1,31 @@
-<div class="page-container">   
-    @for (groupedJobs of jobs; track groupedJobs){
-        <div class="year-container">{{groupedJobs.key}} - {{parseDuration(groupedJobs.values.at(-1)?.startDate, groupedJobs.values.at(0)?.endDate)}}</div>
-    
-        @for (job of groupedJobs.values; track job) {
-            <div class="article-container">
-                <div class="link-container">
-                    <div class="symbol"></div>
-                        <span class="title">{{job.jobTitle}}</span>
-                </div>
-                <div class="subtext transparent">{{parseDate(job.startDate)}} - {{parseDate(job.endDate)}}</div>
-                <div class="subtext transparent">{{job.location}}</div>
+<div class="resume">   
+    <div class="resume__container">
+        @for (groupedJobs of jobs; track groupedJobs){
+            <div class="resume__company">{{groupedJobs.key}} - {{parseDuration(groupedJobs.values.at(-1)?.startDate, groupedJobs.values.at(0)?.endDate)}}</div>
+        
+            @for (job of groupedJobs.values; track job) {
+                <div class="resume__joblist">
+                    <div class="resume_jobtitle">
+                        <div class="job-symbol"></div>
+                            <span class="job-title">{{job.jobTitle}}</span>
+                    </div>
+                    <div class="job-subtext transparent">{{parseDate(job.startDate)}} - {{parseDate(job.endDate)}}</div>
+                    <div class="job-subtext transparent">{{job.location}}</div>
 
-                <div class="subtext description">{{job.description}}</div>
-                <div class="subtext"> 
-                    @if (job.skills.length !== 0) {
-                        <span class="material-symbols-outlined icon">diamond</span>
-                        <div>
-                            @for (skill of job.skills; track skill; let last = $last)
-                            {
-                                <span>{{skill}}{{!last ? ", " : ""}} </span>
-                            }
-                        </div>
-                    }       
+                    <div class="job-subtext description">{{job.description}}</div>
+                    <div class="job-subtext"> 
+                        @if (job.skills.length !== 0) {
+                            <span class="material-symbols-outlined icon">diamond</span>
+                            <div>
+                                @for (skill of job.skills; track skill; let last = $last)
+                                {
+                                    <span>{{skill}}{{!last ? ", " : ""}} </span>
+                                }
+                            </div>
+                        }       
+                    </div>
                 </div>
-            </div>
+            }
         }
-    }
+    </div>
 </div>

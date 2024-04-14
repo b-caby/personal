@@ -79,6 +79,8 @@ main {
     overflow: hidden;
     height: inherit;
     width: 100%;
+    position: fixed;
+    top: var(--header-height);
 }
 
 article {

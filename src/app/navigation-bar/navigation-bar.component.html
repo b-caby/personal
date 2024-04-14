@@ -9,13 +9,15 @@
         </a>
     </div>
 
+    <div class="grow-full-width"></div>
+
     <div style="display:flex;">
         <div class="navigation-bar"
              [class.toggled]=toggled>
 
              <div class="navbar">
                 @for (item of items; track item) {
-                    <a routerLink={{item.hyperlink}} routerLinkActive="active" (click)="Toggle()">
+                    <a routerLink={{item.hyperlink}} routerLinkActive="active" (click)="CloseOverlay()">
                         <div class="navbar-item">
                             <div class="navbar-title">{{item.title}}</div>
                         </div>
@@ -27,7 +29,7 @@
         <div class="header-button-section">
             <button class="header-button"
                     [class.toggled]=toggled 
-                    (click)="Toggle()">
+                    (click)="ToggleOverlay()">
                 <div class="menu-line line-1"></div>
                 <div class="menu-line line-2"></div>
                 <div class="menu-line line-3"></div>
@@ -38,5 +40,5 @@
 
 @if (toggled)
 {
-    <div class="overlay" (click)="Toggle()"></div>
+    <div class="overlay" (click)="CloseOverlay()"></div>
 }

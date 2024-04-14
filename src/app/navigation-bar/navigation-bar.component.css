@@ -7,6 +7,10 @@
     padding-left: var(--sg_xlg);
     padding-right: var(--sg_xlg);
     min-height: var(--header-height);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
     .header-bar .home-link {
@@ -131,6 +135,14 @@
 .active .navbar-item {
     box-sizing: border-box;
     border-bottom: var(--sg_sm) solid var(--primary-hover);
+}
+
+.grow-full-width {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
 }
 
 @media (max-width: 640px) {

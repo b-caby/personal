@@ -10,11 +10,13 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class NavigationBarComponent {
   public toggled: boolean = false;
-  public Toggle = () => this.toggled = !this.toggled;
+
+  public ToggleOverlay = () => this.toggled = !this.toggled;
+  public CloseOverlay = () => this.toggled = false;
+
   public items = [
       { title: "ABOUT ME", hyperlink: "home" },
       { title: "RESUME", hyperlink: "resume" },
       { title: "TRAVELS", hyperlink: "travels" },
   ];
-
 }
