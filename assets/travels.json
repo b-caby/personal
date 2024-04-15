@@ -1,30 +1,28 @@
 [
   {
-    "title": "Black forest",
-    "startDate": "01/01/2020",
-    "endDate": "15/01/2020",
+    "title": "Vietnam",
+    "startDate": "08/10/2022",
+    "endDate": "21/10/2022",
     "background": "https://polarsteps.s3.amazonaws.com/u_9/04502347-cab4-4db3-b4eb-6b6817b39251_large_image",
     "steps": [
       {    
-        "title": "Waimes",
-        "description": "The trip started like any proper Dutch summer: non-stop rain for the whole day. We went to Belgium to meet Aurelien, Genevieve and the kids. We had a great time with them. The young people were best friends despite having no shared language. We had lunch in the highest (as in altitude) brewery of Belgium, then slept in a hostel close by.",
-        "date": "06/08/2023",
-        "latitude": 50.286966381956745,
-        "longitude": 6.103060789050865,
+        "title": "Ho Chi Minh City",
+        "description": "Arrival at the capital of Vietnam.",
+        "date": "09/10/2022",
+        "latitude": 10.775339, 
+        "longitude": 106.702192,
         "pictures": [
-          "https://polarsteps.s3.amazonaws.com/user_images/steps/large_thumb/u_9/adb80431-ca74-42ef-a044-164f64af8328_b88da511-be7f-4ad0-a994-5216507d507c.jpg",
-          "https://polarsteps.s3.amazonaws.com/user_images/steps/large_thumb/u_9/2a4b0587-b3b6-4b8b-a820-51aef6395f20_86b3f641-42ad-413b-b18c-8db5c2456f40.jpg"
+          "https://lh3.googleusercontent.com/pw/AP1GczNjp1d3WcaVsw6OzA7XCej21oJgEBM_Tol5YJztKYC5JrsgWJhn9ndzPdBOnEmnZVu_4TSQuCxtbJsN8F2NHozbbIc1MTF36q73vw7PvencJSC0gBX2JYZ_U8fUlBQnNRVq5UbA3BH-oWZFVD3VdYqB=w671-h895"
         ]
       },
       {
-        "title": "Weisenbach",
-        "description": "Staying at a very nice Airbnb, walking a bit in the towns and forests.",
-        "date": "07/08/2023",
-        "latitude": 48.793540149407576, 
-        "longitude": 8.25144381671569,
+        "title": "Hoi An",
+        "description": "Took the plane to Hoi An. The flood is starting.",
+        "date": "10/10/2023",
+        "latitude": 15.876161, 
+        "longitude": 108.325606,
         "pictures": [
-          "https://polarsteps.s3.amazonaws.com/user_images/steps/large_thumb/u_9/adb80431-ca74-42ef-a044-164f64af8328_b88da511-be7f-4ad0-a994-5216507d507c.jpg",
-          "https://polarsteps.s3.amazonaws.com/user_images/steps/large_thumb/u_9/2a4b0587-b3b6-4b8b-a820-51aef6395f20_86b3f641-42ad-413b-b18c-8db5c2456f40.jpg"
+          "https://lh3.googleusercontent.com/pw/AP1GczNzuDzWyt_fhvKMmDRjZ7weSiGk5CGmxsAOmqD5zOndgzGKBWkSb4G29eFDVX1MbtzvrrRWLYGcClo5tfwkPiz0dcMFpGHwYdK7EPpblP0AsTPZbF_wKQIsiAc2j81N6hElxwKVwJmvoqSVRaHou3Rc=w671-h895"  
         ]
       }
     ]
