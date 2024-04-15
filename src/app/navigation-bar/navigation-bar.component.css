@@ -4,8 +4,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: var(--sg_xlg);
-    padding-right: var(--sg_xlg);
+    padding-left: var(--sg_xxlg);
+    padding-right: var(--sg_xxlg);
     min-height: var(--header-height);
     position: fixed;
     top: 0;
@@ -130,10 +130,10 @@
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    height: var(--sg_xlg);
+    height: var(--sg_xxlg);
     justify-content: space-around;
     transition: transform var(--transition) ease-out;
-    width: var(--sg_xlg);
+    width: var(--sg_xxlg);
     padding: var(--sg_sm);
 }
 
@@ -149,7 +149,7 @@
 
 .button-line {
     background-color: var(--primary);
-    border-radius: var(--border-radius);
+    border-radius: 2px;
     height: 3px;
     width: 24px;
 }

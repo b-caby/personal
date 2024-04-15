@@ -16,10 +16,11 @@
     --sg_sm: calc(var(--sg-unit) * 0.5);
     --sg: var(--sg-unit);
     --sg_lg: calc(var(--sg-unit) * 2);
-    --sg_xlg: calc(var(--sg-unit) * 4);
+    --sg_xlg: calc(var(--sg-unit) * 3);
+    --sg_xxlg: calc(var(--sg-unit) * 4);
     --header-height: 80px;
     /* Border radius */
-    --border-radius: 2px;
+    --border-radius: 12px;
     /* Transition */
     --transition: 250ms;
 }
@@ -89,7 +90,7 @@ article {
 }
 
 .page-container {
-    padding: var(--sg_xlg);
+    padding: var(--sg_xxlg);
 }
 
 .material-symbols-outlined {

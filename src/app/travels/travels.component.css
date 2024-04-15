@@ -52,10 +52,6 @@
   flex-direction: column;
 }
 
-.trip__picture {
-  width: 100%;
-}
-
 .map__container {
   position: absolute;
   right: 0;
@@ -83,7 +79,7 @@
 
 /* For browsers that support `scrollbar-*` properties */
 @supports (scrollbar-color: auto) {
-  .trips-container {
+  .trips {
     scrollbar-color: grey transparent;
   }
 }
@@ -128,11 +124,7 @@
     gap: var(--sg);
     flex-direction: column;
   }
-  
-  .trip__picture {
-    width: 100%;
-  }
-  
+
   .map__container {
     flex-direction: column-reverse;
   }

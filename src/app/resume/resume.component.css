@@ -7,7 +7,7 @@
     position: fixed;
     top: var(--header-height);
     bottom: 0;
-    padding: var(--sg_xlg);
+    padding: var(--sg_xxlg);
     box-sizing: border-box;
     overflow: auto;
 }

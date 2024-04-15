@@ -3,13 +3,14 @@ import { Map } from 'maplibre-gl';
 import { TravelService } from './service/travels.service';
 import { Trip } from './model/trip';
 import moment from 'moment';
+import { StepComponent } from "./step/step.component";
 
 @Component({
-  selector: 'app-travels',
-  standalone: true,
-  imports: [],
-  templateUrl: './travels.component.html',
-  styleUrl: './travels.component.css'
+    selector: 'app-travels',
+    standalone: true,
+    templateUrl: './travels.component.html',
+    styleUrl: './travels.component.css',
+    imports: [StepComponent]
 })
 export class TravelsComponent implements OnInit, AfterViewInit, OnDestroy {
 
@@ -23,8 +24,7 @@ export class TravelsComponent implements OnInit, AfterViewInit, OnDestroy {
   constructor(private service: TravelService) { }
 
   ngOnInit(): void {
-    this.service.fetchTrips()
-    .subscribe(data => this.trips = data);
+    this.service.fetchTrips().subscribe(data => this.trips = data);
   }
 
   ngAfterViewInit() {
@@ -36,7 +36,6 @@ export class TravelsComponent implements OnInit, AfterViewInit, OnDestroy {
       center: [initialState.lng, initialState.lat],
       zoom: initialState.zoom
     });
-
   }
 
   ngOnDestroy() {

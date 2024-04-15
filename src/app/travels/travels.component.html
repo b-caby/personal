@@ -18,15 +18,7 @@
             <div class="trip__close" (click)="CloseTrip()">Close</div>
             <div class="trip__steplist">
                 @for (step of currentTrip.steps; track step) {
-                    <div class="trip__item">
-                        <div>{{step.title}}</div>
-                        <div>{{step.description}}</div>
-                        <div>
-                            @for (picture of step.pictures; track picture){
-                                <img class="trip__picture" src="{{picture}}">
-                            }
-                        </div> 
-                    </div>
+                    <app-step [step]=step></app-step>
                 }
             </div>
         </div>

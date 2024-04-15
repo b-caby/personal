@@ -1,12 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ResumeService } from './service/resume.service';
+import { GroupedJob } from './model/groupedJob';
 import moment from 'moment';
-import { Job } from './model/job';
-
-interface GroupedJob {
-  key: string;
-  values: Job[];
-}
 
 @Component({
   selector: 'app-resume',
@@ -23,20 +18,7 @@ export class ResumeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.service.fetchResume()
-      .subscribe(data => this.jobs = this.groupByCompany(data));
-  }
-
-  private groupByCompany(array: Job[]): GroupedJob[] {
-    return array.reduce((all: GroupedJob[], current: Job) => {
-      const existingKey = all.find(group => group.key === current.company);
-      if (!existingKey) {
-        all.push({key: current.company, values: [current]});
-      } else {
-        existingKey.values.push(current);
-      }
-      return all;
-    }, []);
+    this.service.fetchResume().subscribe(data => this.jobs = data);
   }
 
   public parseDuration(startDate: string | undefined, endDate: string | undefined): string {

@@ -1,0 +1,14 @@
+<div class="trip__step">
+    <div class="trip__title">{{step.title}}</div>
+    <div class="trip__date">
+        <span class="fi fi-{{countryFlag}}"></span>
+        <span>{{country}}</span>
+        <span>{{parseStepDate(step.date)}}</span>
+    </div>
+    <div>{{step.description}}</div>
+    <div>
+        @for (picture of step.pictures; track picture) {
+            <img class="trip__picture" src="{{picture}}">
+        }
+    </div> 
+</div>
