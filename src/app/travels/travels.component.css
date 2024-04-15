@@ -9,7 +9,7 @@
   left: 0;
   bottom: 0;
   width: 360px;
-  z-index: 999;
+  z-index: 10;
   overflow: auto;
   background: var(--background);
   padding: var(--sg);
@@ -35,7 +35,7 @@
   width: 50%;
   max-width: 1000px;
   min-width: 600px;
-  z-index: 999;
+  z-index: 10;
   overflow: auto;
   background: var(--background);
 }

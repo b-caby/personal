@@ -1,9 +1,9 @@
 <div class="header-bar">
     <div>
-        <a class="home-link" routerLink="/home">
-            <div class="symbol"></div>
+        <a class="header-bar__home" routerLink="/home" (click)="CloseOverlay()">
+            <div class="header-bar__home-symbol"></div>
             <div>
-                <span class="name">Bérenger Caby</span>
+                <span class="header-bar__home-name">Bérenger Caby</span>
                 <div>Software developer</div>
             </div>
         </a>
@@ -11,28 +11,28 @@
 
     <div class="grow-full-width"></div>
 
-    <div style="display:flex;">
+    <div class="header-bar__navigation">
         <div class="navigation-bar"
              [class.toggled]=toggled>
 
-             <div class="navbar">
+             <div class="navigation-bar__itemlist">
                 @for (item of items; track item) {
                     <a routerLink={{item.hyperlink}} routerLinkActive="active" (click)="CloseOverlay()">
-                        <div class="navbar-item">
-                            <div class="navbar-title">{{item.title}}</div>
+                        <div class="navigation-bar__item">
+                            <div class="navigation-bar__item-title">{{item.title}}</div>
                         </div>
                     </a>
                  }
             </div>
         </div>
 
-        <div class="header-button-section">
-            <button class="header-button"
-                    [class.toggled]=toggled 
+        <div class="button-section"
+             [class.toggled]=toggled >
+            <button class="toggle-button"
                     (click)="ToggleOverlay()">
-                <div class="menu-line line-1"></div>
-                <div class="menu-line line-2"></div>
-                <div class="menu-line line-3"></div>
+                <div class="button-line line-1"></div>
+                <div class="button-line line-2"></div>
+                <div class="button-line line-3"></div>
             </button>
         </div>
     </div>
