@@ -1,24 +1,23 @@
-.trip__step {
-    background-color: white;
-    border-radius: var(--border-radius);
-    padding: var(--sg_xlg);
-    border: 1px solid var(--grey-default);
+.step {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: var(--sg_xlg);
+  border: 1px solid var(--grey-default);
 }
-  
-  .trip__title {
-    color: var(--primary);
-    font-size: 18px;
-    font-weight: bold;
-    font-family: Poppins, sans-serif;
+
+.step-title {
+  color: var(--primary);
+  font-size: 18px;
+  font-weight: bold;
+  font-family: Poppins, sans-serif;
 }
-  
-  .trip__picture {
-    width: 100%;
+
+.step-picture {
+  width: 100%;
 }
 
 @media (max-width: 720px) {
-
-    .trip__picture {
-        width: 100%;
-      }
+  .step-picture {
+    width: 100%;
+  }
 }

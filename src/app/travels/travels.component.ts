@@ -4,13 +4,14 @@ import { TravelService } from './service/travels.service';
 import { Trip } from './model/trip';
 import moment from 'moment';
 import { StepComponent } from "./step/step.component";
+import { TripComponent } from "./trip/trip.component";
 
 @Component({
     selector: 'app-travels',
     standalone: true,
     templateUrl: './travels.component.html',
     styleUrl: './travels.component.css',
-    imports: [StepComponent]
+    imports: [StepComponent, TripComponent]
 })
 export class TravelsComponent implements OnInit, AfterViewInit, OnDestroy {
 
@@ -40,14 +41,6 @@ export class TravelsComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngOnDestroy() {
     this.map?.remove();
-  }
-
-  public parseTripDuration(startDate: string, endDate: string): string {
-    const startMoment = moment(startDate, "DD/MM/YYYY");
-    const endMoment = moment(endDate, "DD/MM/YYYY");
-
-    const numberOfDays = moment.duration(endMoment.diff(startMoment)).asDays();
-    return `${moment.duration(numberOfDays, "days").humanize().replace('a ', '1 ').trim()}`;
   }
 
   public OpenTrip(trip: Trip) {

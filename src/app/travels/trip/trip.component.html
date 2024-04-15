@@ -1,0 +1,20 @@
+<div class="trip">
+    <div class="trip-content">
+        <div class="trip-title">{{trip.title}}</div>
+        <div class="trip-info">
+            <div>
+                <div class="value">{{parseTripYear(trip.startDate)}}</div>
+                <div class="description">{{parseTripMonth(trip.startDate)}}</div>
+            </div>
+            <div>
+                <div class="value">{{parseTripDuration(trip.startDate, trip.endDate)[0]}}</div>
+                <div class="description">{{parseTripDuration(trip.startDate, trip.endDate)[1]}}</div>
+            </div>
+            <div>
+                <div class="value">{{trip.steps.length}}</div>
+                <div class="description">steps</div>
+            </div>
+        </div>
+    </div>
+    <div class="trip-background" style="background-image: url('https://lh3.googleusercontent.com/pw/{{trip.background}}');"></div>
+</div>

@@ -1,9 +1,9 @@
 [
   {
-    "title": "Vietnam",
-    "startDate": "08/10/2022",
-    "endDate": "21/10/2022",
-    "background": "https://polarsteps.s3.amazonaws.com/u_9/04502347-cab4-4db3-b4eb-6b6817b39251_large_image",
+    "title": "Portugal",
+    "startDate": "04/09/2023",
+    "endDate": "18/09/2023",
+    "background": "AP1GczNKafTtSj9la5id8GSlM4ix2ZhW18w0e_qZKRiLO0dPqUbMIwOMfjoQaAgQCnXx68Dm95VYjDcTpJ9OSNX7cFrCtcA4xMWIEgOyB0lhjc-Q4G9J1CoLVnKB6pxMr2unT8GU6FNoxjC8qw56XqnTwcjw",
     "steps": [
       {    
         "title": "Ho Chi Minh City",
@@ -28,100 +28,66 @@
     ]
   },
   {
-    "title": "Hong Kong + Taiwan",
-    "startDate": "01/01/2020",
-    "endDate": "15/01/2020",
-    "background": "https://polarsteps.s3.amazonaws.com/u_9/b979be4e-882e-4235-8003-91339a0caf4c_large_image",
+    "title": "Cotes d'Azur",
+    "startDate": "21/06/2023",
+    "endDate": "29/06/2023",
+    "background": "AP1GczOszMEQ8oxkJCfHwm6TakS-dBoUn6p6n5YnHB_3zUKnfujcq-YZ7HVHMi3G-pKDuU3L8HUoYZvFtQniwh8kjj-C6ypNgpIm5E4d0_xsjg4uTCOViVhqnEGrwkZ1rQaere0pKMZ9XQev8J2D9Xg9Ht7S",
     "steps": [
       {    
-        "title": "Waimes",
-        "description": "The trip started like any proper Dutch summer: non-stop rain for the whole day. We went to Belgium to meet Aurelien, Genevieve and the kids. We had a great time with them. The young people were best friends despite having no shared language. We had lunch in the highest (as in altitude) brewery of Belgium, then slept in a hostel close by.",
-        "date": "06/08/2023",
-        "latitude": 50.286966381956745,
-        "longitude": 6.103060789050865,
+        "title": "Ho Chi Minh City",
+        "description": "Arrival at the capital of Vietnam.",
+        "date": "09/10/2022",
+        "latitude": 10.775339, 
+        "longitude": 106.702192,
         "pictures": [
-          "https://polarsteps.s3.amazonaws.com/user_images/steps/large_thumb/u_9/adb80431-ca74-42ef-a044-164f64af8328_b88da511-be7f-4ad0-a994-5216507d507c.jpg",
-          "https://polarsteps.s3.amazonaws.com/user_images/steps/large_thumb/u_9/2a4b0587-b3b6-4b8b-a820-51aef6395f20_86b3f641-42ad-413b-b18c-8db5c2456f40.jpg"
+          "https://lh3.googleusercontent.com/pw/AP1GczNjp1d3WcaVsw6OzA7XCej21oJgEBM_Tol5YJztKYC5JrsgWJhn9ndzPdBOnEmnZVu_4TSQuCxtbJsN8F2NHozbbIc1MTF36q73vw7PvencJSC0gBX2JYZ_U8fUlBQnNRVq5UbA3BH-oWZFVD3VdYqB=w671-h895"
         ]
       },
       {
-        "title": "Weisenbach",
-        "description": "Staying at a very nice Airbnb, walking a bit in the towns and forests.",
-        "date": "07/08/2023",
-        "latitude": 48.793540149407576, 
-        "longitude": 8.25144381671569,
+        "title": "Hoi An",
+        "description": "Took the plane to Hoi An. The flood is starting.",
+        "date": "10/10/2023",
+        "latitude": 15.876161, 
+        "longitude": 108.325606,
         "pictures": [
-          "https://polarsteps.s3.amazonaws.com/user_images/steps/large_thumb/u_9/adb80431-ca74-42ef-a044-164f64af8328_b88da511-be7f-4ad0-a994-5216507d507c.jpg",
-          "https://polarsteps.s3.amazonaws.com/user_images/steps/large_thumb/u_9/2a4b0587-b3b6-4b8b-a820-51aef6395f20_86b3f641-42ad-413b-b18c-8db5c2456f40.jpg"
+          "https://lh3.googleusercontent.com/pw/AP1GczNzuDzWyt_fhvKMmDRjZ7weSiGk5CGmxsAOmqD5zOndgzGKBWkSb4G29eFDVX1MbtzvrrRWLYGcClo5tfwkPiz0dcMFpGHwYdK7EPpblP0AsTPZbF_wKQIsiAc2j81N6hElxwKVwJmvoqSVRaHou3Rc=w671-h895"  
         ]
       }
     ]
   },
   {
-    "title": "Teleporting to New Zealand!",
-    "startDate": "01/01/2020",
-    "endDate": "15/01/2020",
-    "background": "https://polarsteps.s3.amazonaws.com/u_9/b979be4e-882e-4235-8003-91339a0caf4c_large_image",
+    "title": "Vietnam",
+    "startDate": "07/10/2022",
+    "endDate": "20/10/2022",
+    "background": "AP1GczPX4C4z3dgaGlhAWd3h0lamT1Nxn4sgsiISNMz4lTtVcGXz6CJb8T1NtXQUhRhdSAF8n4C3R9Pm46fH4MoBMFLalmv_TOXZzPiSrDJEETZ0ooGjmGFLkRPRlUdQSSdnMiC5UjN0_k8RUCIPDTCeX-IK",
     "steps": [
       {    
-        "title": "Waimes",
-        "description": "The trip started like any proper Dutch summer: non-stop rain for the whole day. We went to Belgium to meet Aurelien, Genevieve and the kids. We had a great time with them. The young people were best friends despite having no shared language. We had lunch in the highest (as in altitude) brewery of Belgium, then slept in a hostel close by.",
-        "date": "06/08/2023",
-        "latitude": 50.286966381956745,
-        "longitude": 6.103060789050865,
+        "title": "Ho Chi Minh City",
+        "description": "Arrival at the capital of Vietnam.",
+        "date": "09/10/2022",
+        "latitude": 10.775339, 
+        "longitude": 106.702192,
         "pictures": [
-          "https://polarsteps.s3.amazonaws.com/user_images/steps/large_thumb/u_9/adb80431-ca74-42ef-a044-164f64af8328_b88da511-be7f-4ad0-a994-5216507d507c.jpg",
-          "https://polarsteps.s3.amazonaws.com/user_images/steps/large_thumb/u_9/2a4b0587-b3b6-4b8b-a820-51aef6395f20_86b3f641-42ad-413b-b18c-8db5c2456f40.jpg"
+          "https://lh3.googleusercontent.com/pw/AP1GczNjp1d3WcaVsw6OzA7XCej21oJgEBM_Tol5YJztKYC5JrsgWJhn9ndzPdBOnEmnZVu_4TSQuCxtbJsN8F2NHozbbIc1MTF36q73vw7PvencJSC0gBX2JYZ_U8fUlBQnNRVq5UbA3BH-oWZFVD3VdYqB=w671-h895"
         ]
       },
       {
-        "title": "Weisenbach",
-        "description": "Staying at a very nice Airbnb, walking a bit in the towns and forests.",
-        "date": "07/08/2023",
-        "latitude": 48.793540149407576, 
-        "longitude": 8.25144381671569,
+        "title": "Hoi An",
+        "description": "Took the plane to Hoi An. The flood is starting.",
+        "date": "10/10/2022",
+        "latitude": 15.876161, 
+        "longitude": 108.325606,
         "pictures": [
-          "https://polarsteps.s3.amazonaws.com/user_images/steps/large_thumb/u_9/adb80431-ca74-42ef-a044-164f64af8328_b88da511-be7f-4ad0-a994-5216507d507c.jpg",
-          "https://polarsteps.s3.amazonaws.com/user_images/steps/large_thumb/u_9/2a4b0587-b3b6-4b8b-a820-51aef6395f20_86b3f641-42ad-413b-b18c-8db5c2456f40.jpg"
+          "https://lh3.googleusercontent.com/pw/AP1GczNzuDzWyt_fhvKMmDRjZ7weSiGk5CGmxsAOmqD5zOndgzGKBWkSb4G29eFDVX1MbtzvrrRWLYGcClo5tfwkPiz0dcMFpGHwYdK7EPpblP0AsTPZbF_wKQIsiAc2j81N6hElxwKVwJmvoqSVRaHou3Rc=w671-h895"  
         ]
       }
     ]
   },
   {
-    "title": "From Poland to Spain",
-    "startDate": "01/01/2020",
-    "endDate": "15/01/2020",
-    "background": "https://polarsteps.s3.amazonaws.com/u_9/04502347-cab4-4db3-b4eb-6b6817b39251_large_image",
-    "steps": [
-      {    
-        "title": "Waimes",
-        "description": "The trip started like any proper Dutch summer: non-stop rain for the whole day. We went to Belgium to meet Aurelien, Genevieve and the kids. We had a great time with them. The young people were best friends despite having no shared language. We had lunch in the highest (as in altitude) brewery of Belgium, then slept in a hostel close by.",
-        "date": "06/08/2023",
-        "latitude": 50.286966381956745,
-        "longitude": 6.103060789050865,
-        "pictures": [
-          "https://polarsteps.s3.amazonaws.com/user_images/steps/large_thumb/u_9/adb80431-ca74-42ef-a044-164f64af8328_b88da511-be7f-4ad0-a994-5216507d507c.jpg",
-          "https://polarsteps.s3.amazonaws.com/user_images/steps/large_thumb/u_9/2a4b0587-b3b6-4b8b-a820-51aef6395f20_86b3f641-42ad-413b-b18c-8db5c2456f40.jpg"
-        ]
-      },
-      {
-        "title": "Weisenbach",
-        "description": "Staying at a very nice Airbnb, walking a bit in the towns and forests.",
-        "date": "07/08/2023",
-        "latitude": 48.793540149407576, 
-        "longitude": 8.25144381671569,
-        "pictures": [
-          "https://polarsteps.s3.amazonaws.com/user_images/steps/large_thumb/u_9/adb80431-ca74-42ef-a044-164f64af8328_b88da511-be7f-4ad0-a994-5216507d507c.jpg",
-          "https://polarsteps.s3.amazonaws.com/user_images/steps/large_thumb/u_9/2a4b0587-b3b6-4b8b-a820-51aef6395f20_86b3f641-42ad-413b-b18c-8db5c2456f40.jpg"
-        ]
-      }
-    ]
-  },
-  {
-    "title": "Japan 2009",
-    "startDate": "01/01/2020",
-    "endDate": "15/01/2020",
-    "background": "https://polarsteps.s3.amazonaws.com/u_9/b979be4e-882e-4235-8003-91339a0caf4c_large_image",
+    "title": "From France to Italy",
+    "startDate": "17/08/2022",
+    "endDate": "28/08/2022",
+    "background": "AP1GczMRhjek8imGs617ISmASX463sHFexlO3iXIYnLlaRkWIMcQ3O0DCAo6D6fTvl0C-trk_jWJ5Sc8Cw0gc0N5W9w8iEVoKKfvjtXBSZ_5EPzvEFiUOxHFWONZ56gif2TLhCQmUF1bCuPPTjF1zxEIa28C",
     "steps": [
       {    
         "title": "Waimes",

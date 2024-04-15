@@ -1,27 +1,25 @@
 <div class="trips">
     @if (!currentTrip) {
-        <!-- Display the list of trips  -->
-        <div class="trips__container">
-            <div class="trips__itemlist">
-                @for (trip of trips; track trip) {
-                    <div class="trips__item" style="background-image: url({{trip.background}});" (click)="OpenTrip(trip)">
-                        <span>{{trip.title}} {{parseTripDuration(trip.startDate, trip.endDate)}} {{trip.steps.length}}</span>
-                    </div>
-                }
-                <div class="trips_phantomitem"></div>
-            </div>
+    <!-- Display the list of trips  -->
+    <div class="trips__container">
+        <div class="trips__itemlist">
+            @for (trip of trips; track trip) {
+            <app-trip [trip]=trip (click)="OpenTrip(trip)"></app-trip>
+            }
+            <div class="trips_phantomitem"></div>
         </div>
+    </div>
     }
     @else {
-        <!-- Display the individual trip -->
-        <div class="trip__container">
-            <div class="trip__close" (click)="CloseTrip()">Close</div>
-            <div class="trip__steplist">
-                @for (step of currentTrip.steps; track step) {
-                    <app-step [step]=step></app-step>
-                }
-            </div>
+    <!-- Display the individual trip -->
+    <div class="trip__container">
+        <div class="trip__close" (click)="CloseTrip()">Close</div>
+        <div class="trip__steplist">
+            @for (step of currentTrip.steps; track step) {
+            <app-step [step]=step></app-step>
+            }
         </div>
+    </div>
     }
 
     <div class="map__container">
