@@ -1,9 +1,10 @@
 [
   {
+    "id": "portugal_2023",
     "title": "Portugal",
     "startDate": "04/09/2023",
     "endDate": "18/09/2023",
-    "background": "AP1GczNKafTtSj9la5id8GSlM4ix2ZhW18w0e_qZKRiLO0dPqUbMIwOMfjoQaAgQCnXx68Dm95VYjDcTpJ9OSNX7cFrCtcA4xMWIEgOyB0lhjc-Q4G9J1CoLVnKB6pxMr2unT8GU6FNoxjC8qw56XqnTwcjw",
+    "background": "portugal_2023_background",
     "steps": [
       {    
         "title": "Porto",
@@ -12,7 +13,7 @@
         "latitude": 38.712221629996826, 
         "longitude": -9.130109265572449,
         "pictures": [
-          "AP1GczPhM4d4mfgwBUnzO3ZSf5mViJflxNFv0PfeH2wrK70YA8LCDiRP9Y9XfxJF-_TiEy5LwBIuV9g4dSiIDDldQ7VljzFxOFHHCiYIYQygwmqEjT4h7g6vgD5W9p59KGSGLVi19Fn9j5KyJpT-8oicpNH2"
+          "portugal_2023_1"
         ]
       },
       {
@@ -22,16 +23,17 @@
         "latitude": 32.7488183412768, 
         "longitude": -16.697566696597278,
         "pictures": [
-          "AP1GczMmDX0QErQeHQ4-DXAaL4YVTrZe242pVi-vOIEcI1XhrO51p7LbPmJy0PY1YoWl6vSHQpDjxJMUJwcDvIZYyziEujvgX4_MqkmDYjW4OXoxJxJHddiekAfn3OdLZD2MPhkn8Omu6ibYr_yofat7b1XT"  
+          "portugal_2023_2"  
         ]
       }
     ]
   },
   {
+    "id": "france_2023",
     "title": "Côte d'Azur",
     "startDate": "21/06/2023",
     "endDate": "29/06/2023",
-    "background": "AP1GczOszMEQ8oxkJCfHwm6TakS-dBoUn6p6n5YnHB_3zUKnfujcq-YZ7HVHMi3G-pKDuU3L8HUoYZvFtQniwh8kjj-C6ypNgpIm5E4d0_xsjg4uTCOViVhqnEGrwkZ1rQaere0pKMZ9XQev8J2D9Xg9Ht7S",
+    "background": "france_2023_background",
     "steps": [
       {    
         "title": "Eze",
@@ -40,7 +42,7 @@
         "latitude": 43.730197774821676, 
         "longitude": 7.366091975737125, 
         "pictures": [
-          "AP1GczOszMEQ8oxkJCfHwm6TakS-dBoUn6p6n5YnHB_3zUKnfujcq-YZ7HVHMi3G-pKDuU3L8HUoYZvFtQniwh8kjj-C6ypNgpIm5E4d0_xsjg4uTCOViVhqnEGrwkZ1rQaere0pKMZ9XQev8J2D9Xg9Ht7S"
+          "france_2023_1"
         ]
       },
       {
@@ -50,16 +52,17 @@
         "latitude": 43.73277010481234, 
         "longitude": 7.427006718598666,
         "pictures": [
-          "AP1GczMC8TTSQmYyRHlW4ZdnEcWvSljIHbyeKMUK2SdAj-t42s5OwzDVSW5LbvUqeT2QXsRkYKMltvi7rlHFkXWeVpfiJTl-SamzeDlMMbwgvCRiAULqXetkSMs_ukaQlwyNM3liaGSzu7V_x7AmQH-BO8ku"  
+          "france_2023_2"  
         ]
       }
     ]
   },
   {
+    "id": "vietnam_2022",
     "title": "Vietnam",
     "startDate": "07/10/2022",
     "endDate": "20/10/2022",
-    "background": "AP1GczPX4C4z3dgaGlhAWd3h0lamT1Nxn4sgsiISNMz4lTtVcGXz6CJb8T1NtXQUhRhdSAF8n4C3R9Pm46fH4MoBMFLalmv_TOXZzPiSrDJEETZ0ooGjmGFLkRPRlUdQSSdnMiC5UjN0_k8RUCIPDTCeX-IK",
+    "background": "vietnam_2022_background",
     "steps": [
       {    
         "title": "Ho Chi Minh City",
@@ -68,7 +71,7 @@
         "latitude": 10.775339, 
         "longitude": 106.702192,
         "pictures": [
-          "AP1GczNjp1d3WcaVsw6OzA7XCej21oJgEBM_Tol5YJztKYC5JrsgWJhn9ndzPdBOnEmnZVu_4TSQuCxtbJsN8F2NHozbbIc1MTF36q73vw7PvencJSC0gBX2JYZ_U8fUlBQnNRVq5UbA3BH-oWZFVD3VdYqB"
+          "vietnam_2022_1"
         ]
       },
       {
@@ -78,25 +81,26 @@
         "latitude": 20.800209440156063,  
         "longitude": 107.09698357230027,
         "pictures": [
-          "AP1GczOrzPOJaBJQMp40AyWgMHI1Y5J8q5Gr27YV8VzZMLRBJqIizxgt44ubgJsNbv4xapw_8w-umshNCOvmWLFnZoaTJ9AZUA8e12fZhe_g3aB1R6YJGTiCbVZPwdqZ7SyOac7w3BSMPN2uMlUI6o8AnVJu"  
+          "vietnam_2022_2"  
         ]
       }
     ]
   },
   {
+    "id": "italy_2022",
     "title": "From France to Italy",
     "startDate": "17/08/2022",
     "endDate": "28/08/2022",
-    "background": "AP1GczMRhjek8imGs617ISmASX463sHFexlO3iXIYnLlaRkWIMcQ3O0DCAo6D6fTvl0C-trk_jWJ5Sc8Cw0gc0N5W9w8iEVoKKfvjtXBSZ_5EPzvEFiUOxHFWONZ56gif2TLhCQmUF1bCuPPTjF1zxEIa28C",
+    "background": "italy_2022_background",
     "steps": [
       {    
         "title": "Reims",
-        "description": "Visit of the  with the family",
+        "description": "Visit of the Faux de Verzy with the family",
         "date": "06/08/2023",
         "latitude": 49.141141109612505, 
         "longitude": 4.156578696671744,
         "pictures": [
-          "AP1GczMVBRosRESOxipJG9jaBPHi-D-_ziisWJLQRP4bz0dbDxaZiq-hNpeQex7Nuz0bXmcdmIJdtAyGlX8q2tbmaIoDzaepVL3sJ1NMHxtB2wx2-dq_3MXTHAr3q3OZwdrOGoefsjwTUAY9XRH7vuFGm5IP"
+          "italy_2022_1"
         ]
       },
       {
@@ -106,7 +110,36 @@
         "latitude": 41.90312089467114,  
         "longitude": 12.450320723358475,
         "pictures": [
-          "AP1GczMRhjek8imGs617ISmASX463sHFexlO3iXIYnLlaRkWIMcQ3O0DCAo6D6fTvl0C-trk_jWJ5Sc8Cw0gc0N5W9w8iEVoKKfvjtXBSZ_5EPzvEFiUOxHFWONZ56gif2TLhCQmUF1bCuPPTjF1zxEIa28C"
+          "italy_2022_2"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "brasil_2021",
+    "title": "Brazil",
+    "startDate": "17/12/2021",
+    "endDate": "04/01/2022",
+    "background": "brasil_2021_background",
+    "steps": [
+      {    
+        "title": "Porto Alegre",
+        "description": "Visit of the family",
+        "date": "18/12/2021",
+        "latitude": -30.033306367083828,  
+        "longitude": -51.23008063016462,
+        "pictures": [
+          "brasil_2021_1"
+        ]
+      },
+      {
+        "title": "Arraial d'Ajuda",
+        "description": "Visiting the north east.",
+        "date": "20/12/2023",
+        "latitude": -16.51866001331498, 
+        "longitude": -39.078795820231704,
+        "pictures": [
+          "brasil_2021_2"
         ]
       }
     ]
