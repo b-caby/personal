@@ -96,3 +96,28 @@ article {
 .material-symbols-outlined {
     font-size: 20px;
 }
+
+.step-marker {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.step-marker_container {
+    width: 100%;
+    height: 100%;
+    border: 2px solid white;
+    box-sizing: border-box;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.step-marker.is-dimmed .step-marker_container {
+    opacity: 0.3;
+}
+
+.step-marker img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
