@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Trip } from '../model/trip';
 import moment from 'moment';
+import { environment } from "../../../environments/environment";
 
 @Component({
   selector: 'app-trip',
@@ -11,7 +12,7 @@ import moment from 'moment';
 })
 export class TripComponent {
   @Input()
-  trip: Trip = { title: "", background: "", startDate: "", endDate: "", steps: [] };
+  trip: Trip = { id: "", title: "", background: "", startDate: "", endDate: "", steps: [] };
 
 
   public parseTripDuration(startDate: string, endDate: string): string[] {
@@ -28,5 +29,9 @@ export class TripComponent {
 
   public parseTripMonth(startDate: string): string {
     return moment(startDate, "DD/MM/YYYY").format("MMMM");
+  }
+
+  public GetURL(trip: Trip):string {
+    return `https://${environment.twicpicAccount}.twic.pics/${environment.twicpicPath}/${trip.background}.jpg`;
   }
 }

@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Step } from '../model/step';
 import moment from 'moment';
 import { TravelService } from '../service/travels.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-step',
@@ -29,5 +30,9 @@ export class StepComponent {
 
   public parseStepDate(date: string): string {
     return moment(date, "DD/MM/YYYY").format("D MMMM YYYY");
-  }   
+  }
+
+  public GetURL(picture: string):string {
+    return `https://${environment.twicpicAccount}.twic.pics/${environment.twicpicPath}/${picture}.jpg`;
+  }
 }

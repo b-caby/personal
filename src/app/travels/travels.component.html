@@ -4,7 +4,7 @@
     <div class="trips__container">
         <div class="trips__itemlist">
             @for (trip of trips; track trip) {
-            <app-trip [trip]=trip (click)="OpenTrip(trip)"></app-trip>
+            <app-trip [trip]=trip (click)="OpenTrip(trip)" (mouseenter)="OnMouseEnterTrip(trip)" (mouseleave)="OnMouseLeaveTrip()"></app-trip>
             }
             <div class="trips_phantomitem"></div>
         </div>

@@ -8,7 +8,7 @@
     <div>{{step.description}}</div>
     <div>
         @for (picture of step.pictures; track picture) {
-            <img class="step-picture" src="https://lh3.googleusercontent.com/pw/{{picture}}">
+            <img class="step-picture" src="{{GetURL(picture)}}">
         }
     </div> 
 </div>
