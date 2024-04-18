@@ -1,8 +1,9 @@
 import { HttpClient } from "@angular/common/http";
-import { Observable, map } from "rxjs";
+import { Observable } from "rxjs";
 import { Injectable } from "@angular/core";
 import { Trip } from "../model/trip";
 import { CountryDTO } from "../model/countryDTO";
+import { environment } from "../../../environments/environment";
 
 @Injectable()
 export class TravelService {
@@ -17,5 +18,9 @@ export class TravelService {
 
     getCountry(latitude: number, longitude: number): Observable<CountryDTO> {
         return this.http.get<CountryDTO>(this.countryURL(latitude, longitude));
+    }
+
+    getPictureURL(picture: string): string {
+        return `https://${environment.twicpicAccount}.twic.pics/${environment.twicpicPath}/${picture}.jpg`;
     }
 }

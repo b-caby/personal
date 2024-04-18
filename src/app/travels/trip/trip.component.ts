@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Trip } from '../model/trip';
 import moment from 'moment';
-import { environment } from "../../../environments/environment";
+import { TravelService } from '../service/travels.service';
 
 @Component({
   selector: 'app-trip',
@@ -14,6 +14,7 @@ export class TripComponent {
   @Input()
   trip: Trip = { id: "", title: "", background: "", startDate: "", endDate: "", steps: [] };
 
+  constructor(private service: TravelService) {}
 
   public parseTripDuration(startDate: string, endDate: string): string[] {
     const startMoment = moment(startDate, "DD/MM/YYYY");
@@ -31,7 +32,7 @@ export class TripComponent {
     return moment(startDate, "DD/MM/YYYY").format("MMMM");
   }
 
-  public GetURL(trip: Trip):string {
-    return `https://${environment.twicpicAccount}.twic.pics/${environment.twicpicPath}/${trip.background}.jpg`;
+  public GetURL(picture: string): string {
+    return this.service.getPictureURL(picture);
   }
 }

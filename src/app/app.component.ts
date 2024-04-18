@@ -12,5 +12,4 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title = 'ng-portfolio';
 }
