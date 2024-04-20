@@ -1,11 +1,12 @@
 import { Component, ViewChild, ElementRef, AfterViewInit, OnDestroy, OnInit } from '@angular/core';
-import { Map } from 'maplibre-gl';
+import { Map, Marker } from 'maplibre-gl';
 import { TravelService } from './service/travels.service';
 import { Trip } from './model/trip';
 import { StepComponent } from "./step/step.component";
 import { TripComponent } from "./trip/trip.component";
 import { Position } from 'geojson';
 import { MapHelper } from './service/map.helper';
+import { Step } from './model/step';
 
 @Component({
   selector: 'app-travels',
@@ -20,7 +21,8 @@ export class TravelsComponent implements OnInit, AfterViewInit, OnDestroy {
   public currentTrip: Trip | undefined;
   public trips: Trip[] = [];
   public coordinates: Position[] = [];
-  private readonly dimmedClass: string = "is-dimmed";
+  public markers: Marker[] = [];
+  public currentMarkers: Marker[] = [];
 
   @ViewChild('map')
   private mapContainer!: ElementRef<HTMLElement>;
@@ -35,15 +37,16 @@ export class TravelsComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit() {
-    this.map = this.helper.InitializeMap(this.mapContainer.nativeElement);
+    this.map = this.helper.initializeMap(this.mapContainer.nativeElement);
 
     this.map.on("load", () => {
       this.trips.forEach(trip => {
-        this.helper.AddLine(trip);
-        this.helper.AddMarkers(trip);
+        this.markers = this.markers.concat(this.helper.setAllMarkers(trip, (e) => { this.OpenTrip(e); }));
+        this.helper.addLine(trip);
       });
 
-      this.helper.FitBounds(this.coordinates);
+      this.helper.addMarkers(this.markers);
+      this.helper.fitBounds(this.coordinates);
     });
   }
 
@@ -53,39 +56,39 @@ export class TravelsComponent implements OnInit, AfterViewInit, OnDestroy {
 
   public OpenTrip(trip: Trip) {
     this.currentTrip = trip;
-    setTimeout(() => { this.helper.FitBounds(trip.steps.map(s => [s.longitude, s.latitude])) }, 100);
+
+    this.helper.changeLinesOpacity(this.trips.filter(t => t !== trip), 0);
+    this.helper.removeMarkers(this.markers);
+    this.currentMarkers = this.helper.setStepMarkers(trip, (e: Step) => { console.log(e.title) });
+
+    setTimeout(() => {
+      this.helper.fitBounds(trip.steps.map(s => [s.longitude, s.latitude]));
+      this.helper.addMarkers(this.currentMarkers);
+      this.helper.highlightMarkers(this.currentMarkers);
+    }, 100);
   }
 
   public CloseTrip() {
     this.currentTrip = undefined;
-    setTimeout(() => { this.helper.FitBounds(this.coordinates) }, 100);
+    this.helper.removeMarkers(this.currentMarkers);
+
+    setTimeout(() => { 
+      this.helper.fitBounds(this.coordinates);
+      this.helper.changeLinesOpacity(this.trips, 1);
+      this.helper.addMarkers(this.markers);
+      this.helper.highlightMarkers(this.markers);
+    }, 100);
   }
 
   public OnMouseEnterTrip(trip: Trip) {
-    this.helper.FitBounds(this.coordinates);
-
-    this.trips.forEach(t => {
-      if (t !== trip) {
-        this.map.setPaintProperty(`${t.id}`, "line-opacity", 0.2);
-      }
-    });
-
-    document.querySelectorAll(".step-marker").forEach(element => {
-      if (element.getAttribute("trip") !== trip.id) {
-        element.classList.add(this.dimmedClass);
-      }
-    });
+    this.helper.fitBounds(this.coordinates);
+    this.helper.changeLinesOpacity(this.trips.filter(t => t !== trip), 0.2);
+    this.helper.dimMarkers(this.markers.filter(m => m._element.getAttribute("trip") !== trip.id));
   }
 
   public OnMouseLeaveTrip() {
-    this.helper.FitBounds(this.coordinates);
-
-    this.trips.forEach(t => {
-      this.map.setPaintProperty(`${t.id}`, "line-opacity", 1);
-    });
-
-    document.querySelectorAll(".step-marker").forEach(element => {
-      element.classList.remove(this.dimmedClass);
-    });
+    this.helper.fitBounds(this.coordinates);
+    this.helper.changeLinesOpacity(this.trips, 1);
+    this.helper.highlightMarkers(this.markers);
   }
 }
