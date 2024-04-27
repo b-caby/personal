@@ -121,7 +121,6 @@ export class TravelsComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   public checkInView() {
-    let currentIndexDisplayed = -1;
     const steps = document.querySelectorAll(".step");
     const highestIndexInView = Array.from(steps).reduce((highestIndex, item, index) => {
       if (this.isInViewport(item)) {
@@ -130,14 +129,7 @@ export class TravelsComponent implements OnInit, AfterViewInit, OnDestroy {
       return highestIndex; 
     }, -1);
     
-    if (currentIndexDisplayed === highestIndexInView) {
-      console.log("hein")
-      return;
-    }
-
-    console.log("Something is moving");
-    currentIndexDisplayed = highestIndexInView;
-    this.helper.fitBounds([[this.currentTrip?.steps[currentIndexDisplayed].longitude, this.currentTrip?.steps[currentIndexDisplayed].latitude]]);
+    this.helper.fitBounds([[this.currentTrip?.steps[highestIndexInView].longitude, this.currentTrip?.steps[highestIndexInView].latitude]]);
   }
 
   public isInViewport(element: Element) {
