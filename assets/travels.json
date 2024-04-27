@@ -7,9 +7,9 @@
     "background": "portugal_2023_background",
     "steps": [
       {    
-        "title": "Porto",
+        "title": "Lisbon",
         "description": "Arrival at the capital of Portugal.",
-        "date": "09/10/2022",
+        "date": "05/09/2023",
         "latitude": 38.712221629996826, 
         "longitude": -9.130109265572449,
         "pictures": [
@@ -19,7 +19,7 @@
       {
         "title": "Madeira",
         "description": "Visiting the remote island of Madeira.",
-        "date": "10/10/2023",
+        "date": "10/09/2023",
         "latitude": 32.7488183412768, 
         "longitude": -16.697566696597278,
         "pictures": [
@@ -38,7 +38,7 @@
       {    
         "title": "Eze",
         "description": "Sleeping in Eze.",
-        "date": "09/10/2022",
+        "date": "22/06/2023",
         "latitude": 43.730197774821676, 
         "longitude": 7.366091975737125, 
         "pictures": [
@@ -48,7 +48,7 @@
       {
         "title": "Monaco",
         "description": "Small trip to Monaco.",
-        "date": "10/10/2023",
+        "date": "24/06/2023",
         "latitude": 43.73277010481234, 
         "longitude": 7.427006718598666,
         "pictures": [
@@ -96,7 +96,7 @@
       {    
         "title": "Reims",
         "description": "Visit of the Faux de Verzy with the family",
-        "date": "06/08/2023",
+        "date": "19/08/2022",
         "latitude": 49.141141109612505, 
         "longitude": 4.156578696671744,
         "pictures": [
@@ -106,7 +106,7 @@
       {
         "title": "Rome",
         "description": "Visiting the italian capital.",
-        "date": "07/08/2023",
+        "date": "24/08/2022",
         "latitude": 41.90312089467114,  
         "longitude": 12.450320723358475,
         "pictures": [
@@ -135,7 +135,7 @@
       {
         "title": "Arraial d'Ajuda",
         "description": "Visiting the north east.",
-        "date": "20/12/2023",
+        "date": "20/12/2021",
         "latitude": -16.51866001331498, 
         "longitude": -39.078795820231704,
         "pictures": [
