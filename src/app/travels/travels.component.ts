@@ -7,14 +7,14 @@ import { TripComponent } from "./trip/trip.component";
 import { Position } from 'geojson';
 import { MapHelper } from './service/map.helper';
 import { Step } from './model/step';
-import moment from 'moment';
+import { StepContainerComponent } from "./step-container/step-container.component";
 
 @Component({
-  selector: 'app-travels',
-  standalone: true,
-  templateUrl: './travels.component.html',
-  styleUrl: './travels.component.css',
-  imports: [StepComponent, TripComponent]
+    selector: 'app-travels',
+    standalone: true,
+    templateUrl: './travels.component.html',
+    styleUrl: './travels.component.css',
+    imports: [StepComponent, TripComponent, StepContainerComponent]
 })
 export class TravelsComponent implements OnInit, AfterViewInit, OnDestroy {
 
@@ -70,7 +70,6 @@ export class TravelsComponent implements OnInit, AfterViewInit, OnDestroy {
         this.helper.fitBounds(trip.steps.map(s => [s.longitude, s.latitude]));
         this.helper.addMarkers(this.currentMarkers);
         this.helper.highlightMarkers(this.currentMarkers);
-        this.startScrollListening();
       }, 100);
     }
   }
@@ -101,40 +100,5 @@ export class TravelsComponent implements OnInit, AfterViewInit, OnDestroy {
       this.helper.changeLinesOpacity(this.trips, 1);
       this.helper.highlightMarkers(this.markers);
     }
-  }
-
-  public parseDate(date: string): string {
-    return moment(date, "DD/MM/YYYY").format("D MMMM YYYY");
-  }
-
-  public parseDuration(startDate: string, endDate: string): string {
-    const startMoment = moment(startDate, "DD/MM/YYYY");
-    const endMoment = moment(endDate, "DD/MM/YYYY");
-
-    const numberOfDays = moment.duration(endMoment.diff(startMoment)).asDays();
-    return moment.duration(numberOfDays, "days").humanize();
-  }
-
-  public startScrollListening() {
-    const container = document.getElementById("trip-scroll");
-    container!.addEventListener("scroll", () => { this.checkInView(); });
-  }
-
-  public checkInView() {
-    const steps = document.querySelectorAll(".step");
-    const highestIndexInView = Array.from(steps).reduce((highestIndex, item, index) => {
-      if (this.isInViewport(item)) {
-        return index;
-      }
-      return highestIndex; 
-    }, -1);
-    
-    this.helper.fitBounds([[this.currentTrip?.steps[highestIndexInView].longitude, this.currentTrip?.steps[highestIndexInView].latitude]]);
-  }
-
-  public isInViewport(element: Element) {
-    var elementRect = element.getBoundingClientRect();
-    var containerRect = document.getElementById("trip-scroll")!.getBoundingClientRect();
-    return elementRect.top < containerRect.bottom * 0.7;
   }
 }

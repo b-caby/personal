@@ -3,12 +3,12 @@
         <div class="trip-title">{{trip.title}}</div>
         <div class="trip-info">
             <div>
-                <div class="value">{{parseTripYear(trip.startDate)}}</div>
-                <div class="description">{{parseTripMonth(trip.startDate)}}</div>
+                <div class="value">{{tripDates[0]}}</div>
+                <div class="description">{{tripDates[1]}}</div>
             </div>
             <div>
-                <div class="value">{{parseTripDuration(trip.startDate, trip.endDate)[0]}}</div>
-                <div class="description">{{parseTripDuration(trip.startDate, trip.endDate)[1]}}</div>
+                <div class="value">{{tripLength[0]}}</div>
+                <div class="description">{{tripLength[1]}}</div>
             </div>
             <div>
                 <div class="value">{{trip.steps.length}}</div>
@@ -16,5 +16,5 @@
             </div>
         </div>
     </div>
-    <div class="trip-background" style='background-image: url("{{GetURL(trip.background)}}")'></div>
+    <div class="trip-background" style='background-image: url("{{picture}}")'></div>
 </div>

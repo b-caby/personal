@@ -26,6 +26,15 @@ export class MapHelper {
     this.map.fitBounds(this.getBounds(coordinates), { padding: 30, screenSpeed: 6 });
   }
 
+  public flyToPoint(latitude: number, longitude: number) {
+    this.map.resize();
+    this.map.flyTo({
+      center: [latitude, longitude],
+      zoom: 10,
+      speed: 4
+    });
+  }
+
   public addLine(trip: Trip) {
     this.map.addSource(trip.id, this.createLineSource(trip.steps.map(s => [s.longitude, s.latitude])));
     this.map.addLayer(this.createLineLayer(trip.id));

@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { Step } from '../model/step';
-import moment from 'moment';
 import { TravelService } from '../service/travels.service';
 
 @Component({
@@ -17,6 +16,8 @@ export class StepComponent {
 
   public country: string = "";
   public countryFlag: string = "";
+  public date: string = "";
+  public pictures: string[] = [];
 
   constructor(private service: TravelService) {}
 
@@ -25,13 +26,8 @@ export class StepComponent {
       this.country = data.address.country;
       this.countryFlag = data.address.country_code;
     });
-  }
 
-  public parseStepDate(date: string): string {
-    return moment(date, "DD/MM/YYYY").format("D MMMM YYYY");
-  }
-
-  public GetURL(picture: string):string {
-    return this.service.getPictureURL(picture);
+    this.date = this.service.humanizeDate(this.step.date);
+    this.pictures = this.step.pictures.map(p => this.service.getPictureURL(p));
   }
 }

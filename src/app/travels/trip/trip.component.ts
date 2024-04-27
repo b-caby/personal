@@ -1,6 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Trip } from '../model/trip';
-import moment from 'moment';
 import { TravelService } from '../service/travels.service';
 
 @Component({
@@ -10,29 +9,19 @@ import { TravelService } from '../service/travels.service';
   templateUrl: './trip.component.html',
   styleUrl: './trip.component.css'
 })
-export class TripComponent {
+export class TripComponent implements OnInit {
   @Input()
   trip: Trip = { id: "", title: "", background: "", startDate: "", endDate: "", steps: [] };
 
+  tripDates: string[] = [];
+  tripLength: string[] = [];
+  picture: string = "";
+
   constructor(private service: TravelService) {}
 
-  public parseTripDuration(startDate: string, endDate: string): string[] {
-    const startMoment = moment(startDate, "DD/MM/YYYY");
-    const endMoment = moment(endDate, "DD/MM/YYYY");
-
-    const numberOfDays = moment.duration(endMoment.diff(startMoment)).asDays();
-    return moment.duration(numberOfDays, "days").humanize().replace('a ', '1 ').trim().split(" ");
-  }
-
-  public parseTripYear(startDate: string): string {
-    return moment(startDate, "DD/MM/YYYY").format("YYYY");
-  }
-
-  public parseTripMonth(startDate: string): string {
-    return moment(startDate, "DD/MM/YYYY").format("MMMM");
-  }
-
-  public GetURL(picture: string): string {
-    return this.service.getPictureURL(picture);
+  ngOnInit(): void {
+    this.tripDates = this.service.humanizeYearAndMonth(this.trip.startDate).split(" ");
+    this.tripLength = this.service.humanizeTripDuration(this.trip.startDate, this.trip.endDate);
+    this.picture = this.service.getPictureURL(this.trip.background);
   }
 }
