@@ -59,8 +59,9 @@ export class StepContainerComponent implements OnInit {
   }
 
   public isScrolledToTop() {
-    var container = document.querySelector(".limit-start")!.getBoundingClientRect();
-    return container.top === 108;
+    var mainContainer = document.getElementById("trip-scroll")!.getBoundingClientRect();
+    var scrollContainer = document.querySelector(".limit-start")!.getBoundingClientRect();
+    return scrollContainer.top === mainContainer.top + 28;
   }
 
   public isInViewport(element: Element) {

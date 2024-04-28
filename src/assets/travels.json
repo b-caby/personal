@@ -10,20 +10,90 @@
         "title": "Lisbon",
         "description": "Arrival at the capital of Portugal.",
         "date": "05/09/2023",
-        "latitude": 38.712221629996826, 
-        "longitude": -9.130109265572449,
+        "latitude": 38.713450, 
+        "longitude": -9.141697,
         "pictures": [
-          "portugal_2023_1"
+          "portugal_2023_1_n"
+        ]
+      },
+      {
+        "title": "Belem",
+        "description": "Visit of Belem.",
+        "date": "06/09/2023",
+        "latitude": 38.692078,  
+        "longitude": -9.214683,
+        "pictures": [
+          "portugal_2023_2_n"
         ]
       },
       {
         "title": "Madeira",
         "description": "Visiting the remote island of Madeira.",
         "date": "10/09/2023",
-        "latitude": 32.7488183412768, 
-        "longitude": -16.697566696597278,
+        "latitude": 32.646978, 
+        "longitude": -16.896728,
         "pictures": [
-          "portugal_2023_2"  
+          "portugal_2023_3"  
+        ]
+      },
+      {
+        "title": "Miradouro Ponta do Furado",
+        "description": "First hike in Madeira.",
+        "date": "11/09/2023",
+        "latitude": 32.738984300424164, 
+        "longitude": -16.680474671255745,
+        "pictures": [
+          "portugal_2023_4"  
+        ]
+      },
+      {
+        "title": "Pico do Areeiro",
+        "description": "Second hike in Madeira.",
+        "date": "12/09/2023",
+        "latitude": 32.735125, 
+        "longitude": -16.928736,
+        "pictures": [
+          "portugal_2023_5"  
+        ]
+      },
+      {
+        "title": "Cabo Girao",
+        "description": "Biking up the mountains of Madeira.",
+        "date": "14/09/2023",
+        "latitude": 32.656481, 
+        "longitude": -17.004578,
+        "pictures": [
+          "portugal_2023_6"  
+        ]
+      },
+      {
+        "title": "Levada das 25 fontes",
+        "description": "Hiking to the Cascata do Risco.",
+        "date": "15/09/2023",
+        "latitude": 32.760569,  
+        "longitude": -17.124128,
+        "pictures": [
+          "portugal_2023_7"  
+        ]
+      },
+      {
+        "title": "Porto Moniz",
+        "description": "Visiting the north of the island and the natural pools.",
+        "date": "17/09/2023",
+        "latitude": 32.867753,  
+        "longitude": -17.167250,
+        "pictures": [
+          "portugal_2023_8"  
+        ]
+      },
+      {
+        "title": "Caldeirao Verde",
+        "description": "Last hike of our trip in a levada.",
+        "date": "18/09/2023",
+        "latitude": 32.779511,  
+        "longitude": -16.934008,
+        "pictures": [
+          "portugal_2023_9"  
         ]
       }
     ]
