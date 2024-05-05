@@ -6,5 +6,6 @@ export interface Trip {
     background: string;
     startDate: string;
     endDate: string;
+    zoom: number;
     steps: Step[];
 }

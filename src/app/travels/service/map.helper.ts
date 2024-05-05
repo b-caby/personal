@@ -26,11 +26,11 @@ export class MapHelper {
     this.map.fitBounds(this.getBounds(coordinates), { padding: 30, screenSpeed: 6 });
   }
 
-  public flyToPoint(latitude: number, longitude: number) {
+  public flyToPoint(latitude: number, longitude: number, zoom: number) {
     this.map.resize();
     this.map.flyTo({
       center: [latitude, longitude],
-      zoom: 10,
+      zoom: zoom,
       speed: 4
     });
   }

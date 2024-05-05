@@ -5,6 +5,7 @@
     "startDate": "04/09/2023",
     "endDate": "18/09/2023",
     "background": "portugal_2023_background",
+    "zoom": 10,
     "steps": [
       {    
         "title": "Lisbon",
@@ -101,24 +102,65 @@
   {
     "id": "france_2023",
     "title": "Côte d'Azur",
-    "startDate": "21/06/2023",
+    "startDate": "20/06/2023",
     "endDate": "29/06/2023",
     "background": "france_2023_background",
+    "zoom": 12,
     "steps": [
       {    
         "title": "Eze",
         "description": "Sleeping in Eze.",
-        "date": "22/06/2023",
+        "date": "21/06/2023",
         "latitude": 43.730197774821676, 
         "longitude": 7.366091975737125, 
         "pictures": [
           "france_2023_1"
         ]
       },
+      {    
+        "title": "Menton",
+        "description": "Visiting the city of lemons.",
+        "date": "22/06/2023",
+        "latitude": 43.779050,  
+        "longitude": 7.505969, 
+        "pictures": [
+          "france_2023_3"
+        ]
+      },
+      {    
+        "title": "Saint-Jean-Cap-Ferrat",
+        "description": "Day at the beach.",
+        "date": "23/06/2023",
+        "latitude": 43.686356,
+        "longitude": 7.349083, 
+        "pictures": [
+          "france_2023_4"
+        ]
+      },
+      {    
+        "title": "Nice",
+        "description": "Climbing the hills of Nice. Nice!",
+        "date": "24/06/2023",
+        "latitude": 43.695753,  
+        "longitude": 7.279872, 
+        "pictures": [
+          "france_2023_5"
+        ]
+      },
+      {    
+        "title": "Eze",
+        "description": "Visiting the botanical garden of Eze.",
+        "date": "26/06/2023",
+        "latitude": 43.728228, 
+        "longitude": 7.361325, 
+        "pictures": [
+          "france_2023_6"
+        ]
+      },
       {
         "title": "Monaco",
         "description": "Small trip to Monaco.",
-        "date": "24/06/2023",
+        "date": "29/06/2023",
         "latitude": 43.73277010481234, 
         "longitude": 7.427006718598666,
         "pictures": [

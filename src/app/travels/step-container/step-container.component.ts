@@ -14,7 +14,7 @@ import { MapHelper } from '../service/map.helper';
 
 export class StepContainerComponent implements OnInit {
   @Input()
-  trip: Trip = { id: "", title: "", background: "", startDate: "", endDate: "", steps: [] };
+  trip: Trip = { id: "", title: "", background: "", startDate: "", endDate: "", zoom: 0, steps: [] };
 
   @Output() closeEvent = new EventEmitter();
 
@@ -50,7 +50,7 @@ export class StepContainerComponent implements OnInit {
       }
   
       this.currentStep = highestIndexInView;
-      this.helper.flyToPoint(this.trip.steps[highestIndexInView].longitude, this.trip.steps[highestIndexInView].latitude);
+      this.helper.flyToPoint(this.trip.steps[highestIndexInView].longitude, this.trip.steps[highestIndexInView].latitude, this.trip.zoom ?? 10);
     }
     else {
       this.currentStep = -1;
