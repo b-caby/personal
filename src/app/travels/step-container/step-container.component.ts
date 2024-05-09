@@ -14,7 +14,7 @@ import { MapHelper } from '../service/map.helper';
 
 export class StepContainerComponent implements OnInit {
   @Input()
-  trip: Trip = { id: "", title: "", background: "", startDate: "", endDate: "", zoom: 0, steps: [] };
+  trip: Trip = { id: 0, title: "", background: "", startDate: "", endDate: "", zoom: 0, steps: [] };
 
   @Output() closeEvent = new EventEmitter();
 

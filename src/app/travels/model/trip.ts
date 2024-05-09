@@ -1,7 +1,7 @@
 import { Step } from "./step";
 
 export interface Trip {
-    id: string;
+    id: number;
     title: string;
     background: string;
     startDate: string;

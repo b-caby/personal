@@ -103,6 +103,10 @@ article {
     cursor: pointer;
 }
 
+.step-marker.is-hidden {
+visibility: hidden;
+}
+
 .step-marker_container {
     width: 100%;
     height: 100%;
@@ -120,4 +124,24 @@ article {
     object-fit: cover;
     height: 100%;
     width: 100%;
+}
+
+.step-marker_cluster {
+    position: absolute;
+    right: -4px;
+    top: -4px;
+    text-align: center;
+    height: 16px;
+    line-height: 15px;
+    width: 16px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background: var(--onbackground);
+    z-index: 10;
+    color: white;
+    font-size: 10px;
+}
+
+.step-marker.is-dimmed .step-marker_cluster {
+    opacity: 0.3;
 }

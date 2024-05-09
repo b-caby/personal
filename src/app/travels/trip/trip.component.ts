@@ -11,7 +11,7 @@ import { TravelService } from '../service/travels.service';
 })
 export class TripComponent implements OnInit {
   @Input()
-  trip: Trip = { id: "", title: "", background: "", startDate: "", endDate: "", zoom: 0, steps: [] };
+  trip: Trip = { id: 0, title: "", background: "", startDate: "", endDate: "", zoom: 0, steps: [] };
 
   tripDates: string[] = [];
   tripLength: string[] = [];

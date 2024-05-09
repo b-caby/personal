@@ -2,13 +2,15 @@ import { Injectable } from "@angular/core";
 import { AddLayerObject, GeoJSONSourceSpecification, LngLatBounds, Map, Marker } from "maplibre-gl";
 import { environment } from "../../../environments/environment";
 import { Trip } from "../model/trip";
-import { Position } from "geojson";
+import { Feature, GeoJsonProperties, Geometry, Position } from "geojson";
 import { Step } from "../model/step";
 
 @Injectable()
 export class MapHelper {
   public map!: Map;
   private readonly dimmedClass: string = "is-dimmed";
+  private markers: Marker[] = [];
+  private markersOnScreen: { [id: string]: Marker } = {};
 
   public initializeMap(element: HTMLElement) {
     this.map = new Map({
@@ -19,6 +21,13 @@ export class MapHelper {
     });
 
     return this.map;
+  }
+
+  /* Map movement */
+  private getBounds(coordinates: any[]) {
+    return coordinates.reduce((bounds, coord) => {
+      return bounds.extend(coord);
+    }, new LngLatBounds(coordinates[0], coordinates[0]));
   }
 
   public fitBounds(coordinates: any[]) {
@@ -35,88 +44,17 @@ export class MapHelper {
     });
   }
 
+  /* Line management */
+
   public addLine(trip: Trip) {
-    this.map.addSource(trip.id, this.createLineSource(trip.steps.map(s => [s.longitude, s.latitude])));
-    this.map.addLayer(this.createLineLayer(trip.id));
-  }
-
-  public setAllMarkers(trip: Trip, callback: (trip: Trip) => void): Marker[] {
-    const markers: Marker[] = [];
-    trip.steps.forEach(step => {
-      const marker = this.createMarker(trip, step);
-      marker.addEventListener("click", () => callback(trip));
-
-      // add marker to map
-      var mapMarker = new Marker({ element: marker }).setLngLat([step.longitude, step.latitude]);
-      markers.push(mapMarker);
-    });
-
-    return markers;
-  }
-
-  public setStepMarkers(trip: Trip, callback: (step: Step) => void): Marker[] {
-    const markers: Marker[] = [];
-    trip.steps.forEach(step => {
-      const marker = this.createMarker(trip, step);
-      marker.addEventListener("click", () => callback(step));
-
-      // add marker to map
-      var mapMarker = new Marker({ element: marker }).setLngLat([step.longitude, step.latitude]);
-      markers.push(mapMarker);
-    });
-
-    return markers;
+    this.map.addSource(`line_${trip.id}`, this.createLineSource(trip.steps.map(s => [s.longitude, s.latitude])));
+    this.map.addLayer(this.createLineLayer(`line_${trip.id}`));
   }
 
   public changeLinesOpacity(trips: Trip[], opacity: number) {
     trips.forEach(t => {
-      this.map.setPaintProperty(`${t.id}`, "line-opacity", opacity);
+      this.map.setPaintProperty(`line_${t.id}`, "line-opacity", opacity);
     });
-  }
-
-  public highlightMarkers(markers: Marker[]) {
-    markers.forEach(marker => {
-      marker.removeClassName(this.dimmedClass);
-    });
-  }
-
-  public dimMarkers(markers: Marker[]) {
-    markers.forEach(marker => {
-      marker.addClassName(this.dimmedClass);
-    });
-  }
-
-  public addMarkers(markers: Marker[]) {
-    markers.forEach(marker => {
-      marker.addTo(this.map);
-    });
-  }
-
-  public removeMarkers(markers: Marker[]) {
-    markers.forEach(marker => {
-      marker.remove();
-    });
-  }
-
-  private createMarker(trip: Trip, step: Step): HTMLDivElement {
-    const marker = document.createElement("div");
-    const markerContainer = document.createElement("div");
-    const image = document.createElement("img");
-    marker.append(markerContainer);
-    markerContainer.append(image);
-
-    marker.className = "step-marker";
-    marker.setAttribute("trip", trip.id);
-    markerContainer.className = "step-marker_container";
-    image.src = `https://${environment.twicpicAccount}.twic.pics/${environment.twicpicPath}/${step.pictures.at(0)}.jpg`;
-
-    return marker;
-  }
-
-  private getBounds(coordinates: any[]) {
-    return coordinates.reduce((bounds, coord) => {
-      return bounds.extend(coord);
-    }, new LngLatBounds(coordinates[0], coordinates[0]));
   }
 
   private createLineSource(coordinates: Position[]): GeoJSONSourceSpecification {
@@ -137,7 +75,7 @@ export class MapHelper {
 
   private createLineLayer(source: string): AddLayerObject {
     return {
-      id: `${source}`,
+      id: source,
       type: "line",
       source: source,
       layout: {
@@ -145,9 +83,133 @@ export class MapHelper {
         "line-cap": "round"
       },
       paint: {
-        "line-color": 'white',
+        "line-color": "white",
         "line-width": 2
       }
     };
+  }
+
+  /* Marker management */
+
+  public addCluster(trips: Trip[]) {
+    this.map.addSource("clusters", this.createClusterSource(trips));
+    this.map.addLayer(this.createPointLayer("clusters"));
+  }
+
+  public createClusterSource(trips: Trip[]): GeoJSONSourceSpecification {
+    const features: Feature<Geometry, GeoJsonProperties>[] = [];
+
+    trips.forEach(trip => {
+      trip.steps.forEach((step, index) => {
+        features.push({
+          type: "Feature",
+          geometry: { type: "Point", coordinates: [step.longitude, step.latitude] },
+          properties: { trip: trip.id, step: index, longitude: step.longitude, latitude: step.latitude }
+        })
+      })
+    });
+
+    return {
+      type: "geojson",
+      data: {
+        type: "FeatureCollection",
+        features: features
+      },
+      cluster: true,
+      clusterRadius: 5,
+      clusterProperties: {
+        trip: ["min", ["get", "trip"]],
+        step: ["min", ["get", "step"]]
+      }
+    }
+  }
+
+  private createPointLayer(source: string): AddLayerObject {
+    return {
+      id: source,
+      type: "circle",
+      source: source,
+      paint: {
+        "circle-color": "white",
+        "circle-radius": 0
+      }
+    };
+  }
+
+  public highlightMarkers() {
+    this.markers.forEach(marker => {
+      marker.removeClassName(this.dimmedClass);
+    });
+  }
+
+  public dimMarkers(trip: Trip) {
+    const markersToDim = this.markers.filter(m => m._element.getAttribute("trip") !== trip.id.toString());
+    markersToDim.forEach(marker => {
+      marker.addClassName(this.dimmedClass);
+    });
+  }
+
+  private createMarker(tripId: string, picture: string, clusterNumber?: number): HTMLDivElement {
+    const marker = document.createElement("div");
+    const markerContainer = document.createElement("div");
+    const image = document.createElement("img");
+    marker.append(markerContainer);
+    markerContainer.append(image);
+
+    marker.className = "step-marker";
+    marker.setAttribute("trip", tripId);
+    markerContainer.className = "step-marker_container";
+    image.src = `https://${environment.twicpicAccount}.twic.pics/${environment.twicpicPath}/${picture}.jpg`;
+
+    if (!!clusterNumber) {
+      const clusterContainer = document.createElement("div");
+      clusterContainer.innerHTML = clusterNumber.toString();
+      clusterContainer.className = "step-marker_cluster";
+      marker.append(clusterContainer);
+    }
+
+    return marker;
+  }
+
+  public updateMarkers(trips: Trip[], callback: (argTrip: Trip, argStep: Step) => void, currentTrip?: Trip) {
+    const newMarkers: { [id: string]: Marker } = {};
+    const features: any[] = this.map.querySourceFeatures("clusters");
+
+    features.forEach(feature => {
+      const props = feature.properties;
+      const tripId = props.trip;
+      const stepId = props.step;
+
+      const coord = !!props.cluster ? feature.geometry.coordinates : [props.longitude, props.latitude];
+      const id = !!props.cluster ? props["cluster_id"] : ((tripId + stepId) * (tripId + stepId + 1) / 2) + stepId;
+
+      if (!currentTrip || currentTrip.id === tripId) {
+        let marker = this.markers[id];
+        if (!marker) {
+          const trip = trips.find(trip => trip.id === props.trip);
+          if (!trip) return;
+          const step = trip.steps.at(stepId);
+          if (!step) return;
+
+          const clusterMarker = this.createMarker(tripId, step.pictures.at(0)!, props["point_count_abbreviated"]);
+          clusterMarker.addEventListener("click", () => callback(trip,step));
+          marker = this.markers[id] = new Marker({ element: clusterMarker }).setLngLat(coord);
+        }
+
+        newMarkers[id] = marker;
+
+        if (!this.markersOnScreen[id]) {
+          marker.addTo(this.map);
+        }
+      }
+    });
+
+    for (const id in this.markersOnScreen) {
+      if (!newMarkers[id]) {
+        this.markersOnScreen[id].remove();
+      }
+    }
+
+    this.markersOnScreen = newMarkers;
   }
 }
