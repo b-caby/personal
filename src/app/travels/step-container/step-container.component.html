@@ -11,6 +11,7 @@
         <div class="limit-description">
             <div class="limit-description_text">Trip started</div>
             <div class="limit-description_date">{{startDate}}</div>
+            <div id="step-0"></div>
         </div>
     </div>
     <div class="trip__steplist">
@@ -23,7 +24,7 @@
                     <div class="trip-separator_text">
                         Traveled for {{parseDuration(trip.steps[index].date, trip.steps[index + 1].date)}}
                     </div>
-                    <div id="step-{{index}}"></div>
+                    <div id="step-{{index + 1}}"></div>
                 </div>
             }
         }

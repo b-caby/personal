@@ -145,3 +145,7 @@ visibility: hidden;
 .step-marker.is-dimmed .step-marker_cluster {
     opacity: 0.3;
 }
+
+.trips:has(.trip__container) .step-marker_container:hover {
+    box-shadow: 0 0 0 var(--sg_sm) var(--primary-hover), 0 0 0 var(--sg) #79A6AF80;
+}

@@ -171,7 +171,12 @@ export class MapHelper {
     return marker;
   }
 
-  public updateMarkers(trips: Trip[], callback: (argTrip: Trip, argStep: Step) => void, currentTrip?: Trip) {
+  public updateMarkers(
+    trips: Trip[],
+    onClick: (argTrip: Trip, argStep: Step) => void,
+    onMouseEnter: (argTrip: Trip) => void,
+    onMouseLeave: (argTrip: Trip) => void,
+    currentTrip?: Trip) {
     const newMarkers: { [id: string]: Marker } = {};
     const features: any[] = this.map.querySourceFeatures("clusters");
 
@@ -192,7 +197,9 @@ export class MapHelper {
           if (!step) return;
 
           const clusterMarker = this.createMarker(tripId, step.pictures.at(0)!, props["point_count_abbreviated"]);
-          clusterMarker.addEventListener("click", () => callback(trip,step));
+          clusterMarker.addEventListener("click", () => onClick(trip,step));
+          clusterMarker.addEventListener("mouseenter", () => onMouseEnter(trip));
+          clusterMarker.addEventListener("mouseleave", () => onMouseLeave(trip));
           marker = this.markers[id] = new Marker({ element: clusterMarker }).setLngLat(coord);
         }
 

@@ -48,9 +48,9 @@ export class TravelsComponent implements OnInit, AfterViewInit, OnDestroy {
       this.map.on("data", (e: any) => {
         if (e.sourceId !== "clusters" || !e.isSourceLoaded) return;
 
-        this.map.on("move", () => this.helper.updateMarkers(this.trips, (t, s) => this.onMarkerClicked(t, s), this.currentTrip));
-        this.map.on("moveend", () => this.helper.updateMarkers(this.trips, (t, s) => this.onMarkerClicked(t, s), this.currentTrip));
-        this.helper.updateMarkers(this.trips, (t, s) => this.onMarkerClicked(t, s), this.currentTrip);
+        this.map.on("move", () => this.helper.updateMarkers(this.trips, (t, s) => this.onMarkerClicked(t, s), (t) => this.onMouseEnterTrip(t), () => this.onMouseLeaveTrip(), this.currentTrip));
+        this.map.on("moveend", () => this.helper.updateMarkers(this.trips, (t, s) => this.onMarkerClicked(t, s), (t) => this.onMouseEnterTrip(t), () => this.onMouseLeaveTrip(), this.currentTrip));
+        this.helper.updateMarkers(this.trips, (t, s) => this.onMarkerClicked(t, s), (t) => this.onMouseEnterTrip(t), () => this.onMouseLeaveTrip(),this.currentTrip);
       });
 
       this.helper.fitBounds(this.coordinates);
@@ -106,7 +106,7 @@ export class TravelsComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   public onMouseEnterTrip(trip: Trip) {
-    if (this.isMapInitialized) {
+    if (this.isMapInitialized && !this.currentTrip) {
       this.helper.fitBounds(this.coordinates);
       this.helper.changeLinesOpacity(this.trips.filter(t => t !== trip), 0.2);
       this.helper.dimMarkers(trip);
@@ -114,7 +114,7 @@ export class TravelsComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   public onMouseLeaveTrip() {
-    if (this.isMapInitialized) {
+    if (this.isMapInitialized && !this.currentTrip) {
       this.helper.fitBounds(this.coordinates);
       this.helper.changeLinesOpacity(this.trips, 1);
       this.helper.highlightMarkers();
