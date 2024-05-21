@@ -92,11 +92,15 @@ export class MapHelper {
   /* Marker management */
 
   public addCluster(trips: Trip[]) {
-    this.map.addSource("clusters", this.createClusterSource(trips));
-    this.map.addLayer(this.createPointLayer("clusters"));
+    const features = this.createClusterFeature(trips);
+
+    trips.forEach((_, index) => {
+      this.map.addSource(`cluster-trip${index + 1}`, this.createClusterSource(features, index + 1));
+      this.map.addLayer(this.createPointLayer(`cluster-trip${index + 1}`));
+    });
   }
 
-  public createClusterSource(trips: Trip[]): GeoJSONSourceSpecification {
+  public createClusterFeature(trips: Trip[]): Feature<Geometry, GeoJsonProperties>[] {
     const features: Feature<Geometry, GeoJsonProperties>[] = [];
 
     trips.forEach(trip => {
@@ -109,14 +113,18 @@ export class MapHelper {
       })
     });
 
+    return features;
+  }
+
+  public createClusterSource(features: Feature<Geometry, GeoJsonProperties>[], index: number): GeoJSONSourceSpecification {
     return {
       type: "geojson",
       data: {
         type: "FeatureCollection",
-        features: features
+        features: features.filter(f => f.properties!["trip"] === index)
       },
       cluster: true,
-      clusterRadius: 5,
+      clusterRadius: 10,
       clusterProperties: {
         trip: ["min", ["get", "trip"]],
         step: ["min", ["get", "step"]]
@@ -178,7 +186,11 @@ export class MapHelper {
     onMouseLeave: (argTrip: Trip) => void,
     currentTrip?: Trip) {
     const newMarkers: { [id: string]: Marker } = {};
-    const features: any[] = this.map.querySourceFeatures("clusters");
+    let features: any[] = [];
+
+    trips.forEach((_, index) => {
+      features = [...features, ...this.map.querySourceFeatures(`cluster-trip${index + 1}`)];
+    });
 
     features.forEach(feature => {
       const props = feature.properties;
@@ -186,7 +198,8 @@ export class MapHelper {
       const stepId = props.step;
 
       const coord = !!props.cluster ? feature.geometry.coordinates : [props.longitude, props.latitude];
-      const id = !!props.cluster ? props["cluster_id"] : ((tripId + stepId) * (tripId + stepId + 1) / 2) + stepId;
+      const rdm = ((tripId + stepId) * (tripId + stepId + 1) / 2) + stepId;
+      const id = !!props.cluster ? rdm : rdm + 10000;
 
       if (!currentTrip || currentTrip.id === tripId) {
         let marker = this.markers[id];
@@ -197,7 +210,7 @@ export class MapHelper {
           if (!step) return;
 
           const clusterMarker = this.createMarker(tripId, step.pictures.at(0)!, props["point_count_abbreviated"]);
-          clusterMarker.addEventListener("click", () => onClick(trip,step));
+          clusterMarker.addEventListener("click", () => onClick(trip, step));
           clusterMarker.addEventListener("mouseenter", () => onMouseEnter(trip));
           clusterMarker.addEventListener("mouseleave", () => onMouseLeave(trip));
           marker = this.markers[id] = new Marker({ element: clusterMarker }).setLngLat(coord);
@@ -217,6 +230,6 @@ export class MapHelper {
       }
     }
 
-    this.markersOnScreen = newMarkers;
+    this.markersOnScreen = newMarkers;    
   }
 }
