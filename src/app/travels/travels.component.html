@@ -4,7 +4,7 @@
     <div class="trips__container">
         <div class="trips__itemlist">
             @for (trip of trips; track trip) {
-                <app-trip [trip]=trip (click)="openTrip(trip)" (mouseenter)="onMouseEnterTrip(trip)" (mouseleave)="onMouseLeaveTrip()"></app-trip>
+                <app-trip [trip]="trip" (click)="openTrip(trip)" (mouseenter)="onMouseEnterTrip(trip)" (mouseleave)="onMouseLeaveTrip()"></app-trip>
             }
             <div class="trips_phantomitem"></div>
         </div>
@@ -12,11 +12,13 @@
     }
     @else {
     <!-- Display the individual trip -->
-        <app-step-container [trip]=currentTrip (closeEvent)="closeTrip()"></app-step-container>
+        <app-step-container [trip]="currentTrip"
+                            [map]="map"
+                            (closeEvent)="closeTrip()"></app-step-container>
     }
 
     <div class="map__container">
-        <div class="map__spacer" [class.is-trip-view]=!!currentTrip></div>
-        <div class="map" #map></div>
+        <div class="map__spacer" [class.is-trip-view]="!!currentTrip"></div>
+        <div class="map" #mapContainer></div>
     </div>
 </div>
