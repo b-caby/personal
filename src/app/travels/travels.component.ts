@@ -60,8 +60,6 @@ export class TravelsComponent implements OnInit, AfterViewInit, OnDestroy {
 
     this.map.on("data", (e: any) => {
       if ((e.sourceId && !e.sourceId.startsWith("cluster-trip")) || !e.isSourceLoaded) return;
-
-      this.map.on("move", () => this.updateMarkers());
       this.map.on("moveend", () => this.updateMarkers());
       this.updateMarkers();
     });
@@ -302,6 +300,16 @@ export class TravelsComponent implements OnInit, AfterViewInit, OnDestroy {
           clusterMarker.addEventListener("mouseenter", () => this.onMouseEnterTrip(trip));
           clusterMarker.addEventListener("mouseleave", () => this.onMouseLeaveTrip());
           marker = this.markers[id] = new Marker({ element: clusterMarker }).setLngLat(coord);
+        }
+        else {
+          // Fix an issue where cluster already exists but at the wrong position and the wrong number
+          if (props.cluster && marker.getLngLat().toArray() !== coord) {
+            marker.setLngLat(coord);
+          }
+
+          if (props.cluster && marker._element.getElementsByClassName("step-marker_cluster")[0].innerHTML !== props["point_count_abbreviated"].toString()) {
+           marker._element.getElementsByClassName("step-marker_cluster")[0].innerHTML = props["point_count_abbreviated"];
+          }
         }
 
         newMarkers[id] = marker;
