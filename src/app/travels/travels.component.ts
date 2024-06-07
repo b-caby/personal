@@ -59,7 +59,7 @@ export class TravelsComponent implements OnInit, AfterViewInit, OnDestroy {
     });
 
     this.map.on("data", (e: any) => {
-      if (!e.sourceId.startsWith("cluster-trip") || !e.isSourceLoaded) return;
+      if ((e.sourceId && !e.sourceId.startsWith("cluster-trip")) || !e.isSourceLoaded) return;
 
       this.map.on("move", () => this.updateMarkers());
       this.map.on("moveend", () => this.updateMarkers());
